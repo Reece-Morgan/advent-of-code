@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import { Title } from './lib/component-library';
-// import { Title } from '@aoc/components';
+import { Title } from '@aoc/components';
 
 export default function Home() {
   return (
