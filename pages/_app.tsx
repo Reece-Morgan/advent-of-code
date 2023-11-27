@@ -3,8 +3,6 @@ import { AppProps } from 'next/app';
 import Head from 'next/head'
 import { ReactElement, ReactNode } from 'react';
 import { BaseStyles } from './lib/base-styles';
-import Snow from './lib/components/snow/snow';
-// import { Snow } from '@aoc/components';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -31,9 +29,7 @@ const AdventOfCode = ({ Component, pageProps, ...props }: AppPropsWithLayout) =>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Snow>
-          {Content}
-        </Snow>
+        {Content}
       </main>
     </>
   )
