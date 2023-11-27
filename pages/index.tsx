@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { Title } from '@aoc/components';
 
-export default function Home() {
+const AdventOfCode = () => {
   return (
     <Wrapper>
         <Title>Advent of Code</Title>
@@ -34,3 +34,5 @@ const StyledLink = styled(Link)`
     text-decoration: underline;
   }
 `;
+
+export default AdventOfCode;
