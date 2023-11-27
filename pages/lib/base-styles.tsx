@@ -8,6 +8,8 @@ export const BaseStyles = createGlobalStyle`
         padding: 0;
         margin: 0;
         font-family: sans-serif;
+        background-color: #061123;
+        color: #fff;
     }
     a {
         color: inherit;
