@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import Link from "next/link";
 
 interface Props {
@@ -9,16 +9,21 @@ interface Props {
 }
 
 export const CalendarDoor = ({ children, link, isComplete }: Props) => {
+    const [isDoorOpen, setIsDoorOpen] = useState<boolean>(false);
+
     return (
         <Wrapper>
             {isComplete ? (
-            <StyledLink href={link}>
-                {children}
-            </StyledLink>
+                <DoorFrame>
+                    <Door onClick={() => setIsDoorOpen(!isDoorOpen)} isOpen={isDoorOpen}>{children}</Door>
+                    <StyledLink href={link}>
+                        {children}
+                    </StyledLink>
+                </DoorFrame>
             ) : (
-            <DisabledLink>
+            <DisabledDoor>
                 {children}
-            </DisabledLink>
+            </DisabledDoor>
             )}
             
         </Wrapper>
@@ -26,33 +31,73 @@ export const CalendarDoor = ({ children, link, isComplete }: Props) => {
 }
 
 const Wrapper = styled.div`
-    height: 100px;
-    width: 75px;
-    font-size: 3em;
     font-weight: 800;
     margin: 15px;
 `;
 
-const StyledLink = styled(Link)`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #1f9c0e;
-    background-color: #db1212;
-    border-radius: 50px 50px 0 0;
-    height: 100%;
-    width: 100%;
+const DoorFrame = styled.div`
+    position: relative;
+    perspective: 150px;
+    width: 100px;
+    height: 75px;
     cursor: pointer;
 `;
 
-const DisabledLink = styled.div`
+const Door = styled.div<{isOpen: boolean}>`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #db1212;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    font-size: 3em;
+
+    transform: rotateY(0deg);
+    transform-origin: 0;
+    transition-property: all;
+    transition-duration: 0.5s;
+
+    ${(props) => props.isOpen ? `
+        transform: rotateY(-120deg);
+        transform-origin: 0 50% 0;
+        width: 15%;
+        font-size: 0;
+    ` : `
+        transform: rotateY(0deg);
+        transform-origin: 0;
+        width: 100%;
+        font-size: 3em;
+    `}
+`;
+
+const StyledLink = styled(Link)`
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #1f9c0e;
+    height: 100%;
+    width: 100%;
+    font-size: 3em;
+    cursor: pointer;
+`;
+
+const DisabledDoor = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     color: #6a6e69;
     background-color: #414540;
-    border-radius: 50px 50px 0 0;
-    height: 100%;
-    width: 100%;
+    width: 100px;
+    height: 75px;
     cursor: not-allowed;
+    z-index: 1;
+    font-size: 3em;
 `;
