@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { Title } from './lib/component-library';
+// import { Title } from '@aoc/components';
 
 export default function Home() {
   return (
@@ -15,11 +17,6 @@ export default function Home() {
 const Wrapper = styled.div`
   max-width: 1280px;
   margin: 0 auto;
-`;
-
-const Title = styled.h1`
-  text-align: center;
-  font-size: 3em;
 `;
 
 const StyledList = styled.ul`
