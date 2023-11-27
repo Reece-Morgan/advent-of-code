@@ -38,7 +38,7 @@ const StyledLink = styled(Link)`
     justify-content: center;
     align-items: center;
     color: #1f9c0e;
-    background-color: #6b0c0c;
+    background-color: #db1212;
     border-radius: 50px 50px 0 0;
     height: 100%;
     width: 100%;
