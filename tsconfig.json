@@ -15,8 +15,7 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@aoc/*": ["./*"],
-      "@aoc/components": ["./lib/components/*"]
+      "@aoc/components": ["lib/component-library/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
