@@ -3,6 +3,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head'
 import { ReactElement, ReactNode } from 'react';
 import { BaseStyles } from './lib/base-styles';
+import Snowfall from 'react-snowfall';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -17,6 +18,7 @@ const AdventOfCode = ({ Component, pageProps, ...props }: AppPropsWithLayout) =>
   const Content = getLayout(
     <>
       <BaseStyles />
+      <Snowfall />
       <Component {...pageProps} {...props} />
     </>
   )
