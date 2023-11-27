@@ -7,7 +7,7 @@ const TwentyTwentyThree = () => {
         <>
             <Title>2023 Advent of Code</Title>
             <Wrapper>
-                <CalendarDoor link="2023/day-one" isComplete={false}>1</CalendarDoor>
+                <CalendarDoor link="2023/day-one" isComplete={true}>1</CalendarDoor>
                 <CalendarDoor link="2023/day-two" isComplete={false}>2</CalendarDoor>
                 <CalendarDoor link="2023/day-three" isComplete={false}>3</CalendarDoor>
                 <CalendarDoor link="2023/day-four" isComplete={false}>4</CalendarDoor>
