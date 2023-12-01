@@ -54,7 +54,7 @@ const DoorFrame = styled.div`
 
     @media (max-width: 640px) {
         width: 100px;
-        height: 75px;
+        height: 100px;
     }
 `;
 
@@ -123,7 +123,7 @@ const DisabledDoor = styled.div`
 
     @media (max-width: 640px) {
         width: 100px;
-        height: 75px;
+        height: 100px;
         font-size: 3em;
     }
 `;
