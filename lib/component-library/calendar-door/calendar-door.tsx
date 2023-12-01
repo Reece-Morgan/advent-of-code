@@ -5,19 +5,24 @@ import Link from "next/link";
 interface Props {
     children: ReactNode;
     link: string;
-    isComplete: boolean;
+    isStarted: boolean;
+    status: 'n/a' | 'silver' | 'gold'
 }
 
-export const CalendarDoor = ({ children, link, isComplete }: Props) => {
+export const CalendarDoor = ({ children, link, isStarted, status }: Props) => {
     const [isDoorOpen, setIsDoorOpen] = useState<boolean>(false);
 
     return (
         <Wrapper>
-            {isComplete ? (
+            {isStarted ? (
                 <DoorFrame>
                     <Door onClick={() => setIsDoorOpen(!isDoorOpen)} isOpen={isDoorOpen}>{children}</Door>
                     <StyledLink href={link}>
-                        {children}
+                        {status === 'gold' ? <StyledImg src="/gold-star.png" alt="Gold Star" /> : (
+                            <>
+                            {status === 'silver' ? <StyledImg src="/silver-star.png" alt="Silver Star" /> : <StyledImg src="/empty-star.png" alt="No Star" />}
+                            </>
+                        )}
                     </StyledLink>
                 </DoorFrame>
             ) : (
@@ -33,6 +38,11 @@ export const CalendarDoor = ({ children, link, isComplete }: Props) => {
 const Wrapper = styled.div`
     font-weight: 800;
     margin: 15px;
+`;
+
+const StyledImg = styled.img`
+    width: 90%;
+    height: 90%;
 `;
 
 const DoorFrame = styled.div`
