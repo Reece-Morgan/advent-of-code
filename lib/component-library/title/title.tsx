@@ -15,5 +15,9 @@ export const Title = ({ children, colour }: Props) => {
 const StyledH1 = styled.h1<{colour?: string}>`
     text-align: center;
     font-size: 3em;
-    color: ${(props) => props.colour? props.colour : '#fff'}
+    color: ${(props) => props.colour? props.colour : '#fff'};
+
+    @media (max-width: 640px) {
+        font-size: 1.5em;
+    }
 `;
