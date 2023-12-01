@@ -38,9 +38,7 @@ const TwentyTwentyThree_DayOne = () => {
     }
 
     const partTwo = () => {
-        const updatedLines = replaceWordsWithNumbers(fakeData);
-        // const updatedLines = replaceWordsWithNumbers('eightwothree');
-        // const updatedLines = replaceWordsWithNumbers('5tg578fldlcxponefourtwonet');
+        const updatedLines = replaceWordsWithNumbers(dayOneData);
 
         console.log(updatedLines)
         return formatLines(updatedLines);

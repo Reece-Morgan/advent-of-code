@@ -24,8 +24,7 @@ export const replaceWordsWithNumbers = (inputString: string): string => {
             const len = word.length;
             const substring = inputString.substr(i, len);
             if (substring.toLowerCase() === word) {
-                console.log('substring.toLowerCase(): ', substring.toLowerCase());
-                inputString = inputString.substring(0, i) + wordToNumberMap[word] + inputString.substring(i + len);
+                inputString = inputString.substring(0, i) + wordToNumberMap[word] + inputString.substring(i + 1);
             }
         }
     }
