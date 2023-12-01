@@ -38,9 +38,14 @@ const Wrapper = styled.div`
 const DoorFrame = styled.div`
     position: relative;
     perspective: 150px;
-    width: 100px;
-    height: 75px;
+    width: 175px;
+    height: 175px;
     cursor: pointer;
+
+    @media (max-width: 640px) {
+        width: 100px;
+        height: 75px;
+    }
 `;
 
 const Door = styled.div<{isOpen: boolean}>`
@@ -56,7 +61,6 @@ const Door = styled.div<{isOpen: boolean}>`
     left: 0;
     top: 0;
     z-index: 1;
-    font-size: 3em;
 
     transform: rotateY(0deg);
     transform-origin: 0;
@@ -72,7 +76,11 @@ const Door = styled.div<{isOpen: boolean}>`
         transform: rotateY(0deg);
         transform-origin: 0;
         width: 100%;
-        font-size: 3em;
+        font-size: 5em;
+
+        @media (max-width: 640px) {
+            font-size: 3em;
+        }
     `}
 `;
 
@@ -95,9 +103,15 @@ const DisabledDoor = styled.div`
     align-items: center;
     color: #6a6e69;
     background-color: #414540;
-    width: 100px;
-    height: 75px;
+    width: 175px;
+    height: 175px;
     cursor: not-allowed;
     z-index: 1;
-    font-size: 3em;
+    font-size: 5em;
+
+    @media (max-width: 640px) {
+        width: 100px;
+        height: 75px;
+        font-size: 3em;
+    }
 `;
