@@ -61,6 +61,7 @@ const Door = styled.div<{isOpen: boolean}>`
     left: 0;
     top: 0;
     z-index: 1;
+    border: 5px solid #fff;
 
     transform: rotateY(0deg);
     transform-origin: 0;
@@ -95,6 +96,7 @@ const StyledLink = styled(Link)`
     width: 100%;
     font-size: 3em;
     cursor: pointer;
+    border: 5px dashed #fff;
 `;
 
 const DisabledDoor = styled.div`
