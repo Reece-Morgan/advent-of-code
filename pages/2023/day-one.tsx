@@ -1,12 +1,22 @@
 import { Title } from "@aoc/components"
 import styled from "styled-components";
-import { partOneData } from '../../puzzle-inputs/2023/day-1/part-1';
+import { dayOneData } from '../../puzzle-inputs/2023/day-1/day-1';
+import { replaceWordsWithNumbers } from "@aoc/shared-utils";
 
 const TwentyTwentyThree_DayOne = () => {
-    const partOne = () => {
+    const fakeData = `
+        two1nine
+        eightwothree
+        abcone2threexyz
+        xtwone3four
+        4nineeightseven2
+        zoneight234
+        7pqrstsixteen
+    `;
+    const formatLines = (data: string) => {
         let totalSum: number = 0;
         // Split data by newline character
-        const lines = partOneData.trim().split(/\n/g);
+        const lines = data.trim().split(/\n/g);
         for (let i = 0; i < lines.length; i++) {
             // trim whitespace
             const line = lines[i].trim();
@@ -16,16 +26,33 @@ const TwentyTwentyThree_DayOne = () => {
             const firstDigit = digits.charAt(0);
             const lastDigit = digits.charAt(digits.length - 1);
             const concatenatedNumber = firstDigit + lastDigit;
-            // add concatenated number to toal sum
+            // console.log(i, ': ', firstDigit, ' ', lastDigit, ' ', concatenatedNumber);
+            // add concatenated number to total sum
             totalSum += +concatenatedNumber;
         }
         return totalSum;
     }
+
+    const partOne = () => {
+        return formatLines(dayOneData);
+    }
+
+    const partTwo = () => {
+        const updatedLines = replaceWordsWithNumbers(fakeData);
+        // const updatedLines = replaceWordsWithNumbers('eightwothree');
+        // const updatedLines = replaceWordsWithNumbers('5tg578fldlcxponefourtwonet');
+
+        console.log(updatedLines)
+        return formatLines(updatedLines);
+    }
+   
     return (
         <>
             <Title>2023 - Day 1</Title>
             <Subtitle>Part 1</Subtitle>
             <Answer>{partOne()}</Answer>
+            <Subtitle>Part 2</Subtitle>
+            <Answer>{partTwo()}</Answer>
         </>
     )
 }

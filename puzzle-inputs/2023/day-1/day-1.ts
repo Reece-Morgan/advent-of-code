@@ -1,4 +1,4 @@
-export const partOneData = `
+export const dayOneData = `
     tsgbzmgbonethreedrqzbhxjkvcnm3
     7qlpsnhbmnconeeight78
     prbqsfzqn57
