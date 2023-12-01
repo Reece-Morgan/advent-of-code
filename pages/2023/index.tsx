@@ -7,30 +7,30 @@ const TwentyTwentyThree = () => {
         <>
             <Title>2023 Advent of Code</Title>
             <Wrapper>
-                <CalendarDoor link="2023/day-1" isComplete={true}>1</CalendarDoor>
-                <CalendarDoor link="2023/day-2" isComplete={true}>2</CalendarDoor>
-                <CalendarDoor link="2023/day-3" isComplete={false}>3</CalendarDoor>
-                <CalendarDoor link="2023/day-4" isComplete={false}>4</CalendarDoor>
-                <CalendarDoor link="2023/day-5" isComplete={false}>5</CalendarDoor>
-                <CalendarDoor link="2023/day-6" isComplete={false}>6</CalendarDoor>
-                <CalendarDoor link="2023/day-7" isComplete={false}>7</CalendarDoor>
-                <CalendarDoor link="2023/day-8" isComplete={false}>8</CalendarDoor>
-                <CalendarDoor link="2023/day-9" isComplete={false}>9</CalendarDoor>
-                <CalendarDoor link="2023/day-10" isComplete={false}>10</CalendarDoor>
-                <CalendarDoor link="2023/day-11" isComplete={false}>11</CalendarDoor>
-                <CalendarDoor link="2023/day-12" isComplete={false}>12</CalendarDoor>
-                <CalendarDoor link="2023/day-13" isComplete={false}>13</CalendarDoor>
-                <CalendarDoor link="2023/day-14" isComplete={false}>14</CalendarDoor>
-                <CalendarDoor link="2023/day-15" isComplete={false}>15</CalendarDoor>
-                <CalendarDoor link="2023/day-16" isComplete={false}>16</CalendarDoor>
-                <CalendarDoor link="2023/day-17" isComplete={false}>17</CalendarDoor>
-                <CalendarDoor link="2023/day-18" isComplete={false}>18</CalendarDoor>
-                <CalendarDoor link="2023/day-19" isComplete={false}>19</CalendarDoor>
-                <CalendarDoor link="2023/day-20" isComplete={false}>20</CalendarDoor>
-                <CalendarDoor link="2023/day-21" isComplete={false}>21</CalendarDoor>
-                <CalendarDoor link="2023/day-22" isComplete={false}>22</CalendarDoor>
-                <CalendarDoor link="2023/day-23" isComplete={false}>23</CalendarDoor>
-                <CalendarDoor link="2023/day-24" isComplete={false}>24</CalendarDoor>
+                <CalendarDoor link="2023/day-1" isStarted={true} status="gold">1</CalendarDoor>
+                <CalendarDoor link="2023/day-2" isStarted={false} status="n/a">2</CalendarDoor>
+                <CalendarDoor link="2023/day-3" isStarted={false} status="n/a">3</CalendarDoor>
+                <CalendarDoor link="2023/day-4" isStarted={false} status="n/a">4</CalendarDoor>
+                <CalendarDoor link="2023/day-5" isStarted={false} status="n/a">5</CalendarDoor>
+                <CalendarDoor link="2023/day-6" isStarted={false} status="n/a">6</CalendarDoor>
+                <CalendarDoor link="2023/day-7" isStarted={false} status="n/a">7</CalendarDoor>
+                <CalendarDoor link="2023/day-8" isStarted={false} status="n/a">8</CalendarDoor>
+                <CalendarDoor link="2023/day-9" isStarted={false} status="n/a">9</CalendarDoor>
+                <CalendarDoor link="2023/day-10" isStarted={false} status="n/a">10</CalendarDoor>
+                <CalendarDoor link="2023/day-11" isStarted={false} status="n/a">11</CalendarDoor>
+                <CalendarDoor link="2023/day-12" isStarted={false} status="n/a">12</CalendarDoor>
+                <CalendarDoor link="2023/day-13" isStarted={false} status="n/a">13</CalendarDoor>
+                <CalendarDoor link="2023/day-14" isStarted={false} status="n/a">14</CalendarDoor>
+                <CalendarDoor link="2023/day-15" isStarted={false} status="n/a">15</CalendarDoor>
+                <CalendarDoor link="2023/day-16" isStarted={false} status="n/a">16</CalendarDoor>
+                <CalendarDoor link="2023/day-17" isStarted={false} status="n/a">17</CalendarDoor>
+                <CalendarDoor link="2023/day-18" isStarted={false} status="n/a">18</CalendarDoor>
+                <CalendarDoor link="2023/day-19" isStarted={false} status="n/a">19</CalendarDoor>
+                <CalendarDoor link="2023/day-20" isStarted={false} status="n/a">20</CalendarDoor>
+                <CalendarDoor link="2023/day-21" isStarted={false} status="n/a">21</CalendarDoor>
+                <CalendarDoor link="2023/day-22" isStarted={false} status="n/a">22</CalendarDoor>
+                <CalendarDoor link="2023/day-23" isStarted={false} status="n/a">23</CalendarDoor>
+                <CalendarDoor link="2023/day-24" isStarted={false} status="n/a">24</CalendarDoor>
             </Wrapper>
         </>
     )
