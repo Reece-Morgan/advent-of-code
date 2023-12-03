@@ -1,6 +1,6 @@
 import { Title } from "@aoc/components"
 import { findUniqueSymbols } from "@aoc/shared-utils";
-import { dayThreeData, testData } from "puzzle-inputs/2023/day-3/day-3";
+import { dayThreeData, testData } from "puzzle-inputs/2023/3";
 import styled from "styled-components";
 
 const TwentyTwentyThree_DayThree = () => {
@@ -36,13 +36,11 @@ const TwentyTwentyThree_DayThree = () => {
 
         const symbols = findUniqueSymbols(formattedData);
         symbols.splice(symbols.indexOf('.'), 1);
-        console.log('symbols: ', symbols)
 
         const symbolIndices = findSymbolIndices(formattedData, symbols);
 
         const lines = data.trim().split(/\n/g);
         const lineLength = lines[0].length;
-        console.log('line length: ', lineLength)
 
         for (let i = 0; i < symbols.length; i++) {
             const indicesArray = symbolIndices[symbols[i]];
@@ -91,7 +89,7 @@ const TwentyTwentyThree_DayThree = () => {
         }
 
         // TODO: return totalSum when issue with real data is fixed
-        // return totalSum;
+        return totalSum;
 
         return 'incomplete'
     }
