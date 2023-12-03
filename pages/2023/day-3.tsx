@@ -89,7 +89,7 @@ const TwentyTwentyThree_DayThree = () => {
         }
 
         // TODO: return totalSum when issue with real data is fixed
-        return totalSum;
+        // return totalSum;
 
         return 'incomplete'
     }
