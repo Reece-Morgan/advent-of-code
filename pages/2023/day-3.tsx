@@ -22,7 +22,7 @@ const TwentyTwentyThree_DayThree = () => {
         return indices;
     }
 
-    function doesIndexAlreadyExist(newArray: number[], arrayOfArrays: number[][]): boolean {
+    const doesIndexAlreadyExist = (newArray: number[], arrayOfArrays: number[][]): boolean => {
         return arrayOfArrays.some(existingArray =>
             existingArray.length === newArray.length &&
             existingArray.every((element, index) => element === newArray[index])
