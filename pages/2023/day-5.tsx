@@ -1,7 +1,7 @@
 import { Title } from "@aoc/components"
 import styled from "styled-components";
 
-const TwentyTwentyThree_DayX = () => {
+const TwentyTwentyThree_DayFive = () => {
     const partOne = () => {
         // Function for Part One
         return 'incomplete'
@@ -14,7 +14,7 @@ const TwentyTwentyThree_DayX = () => {
    
     return (
         <>
-            <Title>2023 - Day X</Title>
+            <Title>2023 - Day 5</Title>
             <Subtitle>Part 1</Subtitle>
             <Answer>{partOne()}</Answer>
             <Subtitle>Part 2</Subtitle>
@@ -23,7 +23,7 @@ const TwentyTwentyThree_DayX = () => {
     )
 }
 
-export default TwentyTwentyThree_DayX
+export default TwentyTwentyThree_DayFive
 
 const Subtitle = styled.h2`
     text-align: center;
