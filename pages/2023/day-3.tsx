@@ -1,6 +1,6 @@
 import { Title } from "@aoc/components"
 import { findUniqueSymbols } from "@aoc/shared-utils";
-import { dayThreeData, testData } from "puzzle-inputs/2023/3";
+import { dayThreeData } from "inputs/2023/3";
 import styled from "styled-components";
 
 const TwentyTwentyThree_DayThree = () => {
