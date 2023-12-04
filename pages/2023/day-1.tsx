@@ -1,6 +1,6 @@
 import { Title } from "@aoc/components"
 import styled from "styled-components";
-import { dayOneData } from 'inputs/2023/1';
+import { dayOneData } from '../../inputs/2023/1';
 import { replaceWordsWithNumbers } from "@aoc/shared-utils";
 
 const TwentyTwentyThree_DayOne = () => {
