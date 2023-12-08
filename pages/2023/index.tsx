@@ -14,7 +14,7 @@ const TwentyTwentyThree = () => {
                 <CalendarDoor link="2023/day-5" isStarted={true} status="n/a">5</CalendarDoor>
                 <CalendarDoor link="2023/day-6" isStarted={true} status="gold">6</CalendarDoor>
                 <CalendarDoor link="2023/day-7" isStarted={true} status="gold">7</CalendarDoor>
-                <CalendarDoor link="2023/day-8" isStarted={false} status="n/a">8</CalendarDoor>
+                <CalendarDoor link="2023/day-8" isStarted={true} status="n/a">8</CalendarDoor>
                 <CalendarDoor link="2023/day-9" isStarted={false} status="n/a">9</CalendarDoor>
                 <CalendarDoor link="2023/day-10" isStarted={false} status="n/a">10</CalendarDoor>
                 <CalendarDoor link="2023/day-11" isStarted={false} status="n/a">11</CalendarDoor>
