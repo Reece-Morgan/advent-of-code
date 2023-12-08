@@ -59,23 +59,23 @@ const TwentyTwentyThree_DayEight = () => {
         currentLocation = startingLocations;
 
         let endsWithZ = 0;
-        while (endsWithZ !== startingLocations.length) {
-            for (let d = 0; d < directions.length; d++) {
-                endsWithZ = 0;
-                for (let l = 0; l < startingLocations.length; l++) {
-                    console.log('Im trying!')
-                    const nextDir = directions[d];
-                    const index = locationArr.findIndex(item => item.current === currentLocation[l]);
-                    const currentItem = locationArr[index];
-                    const nextLocation = nextDir === 'L' ? currentItem.left : currentItem.right;
-                    const newIndex = locationArr.findIndex(item => item.current === nextLocation);
-                    const newCurrentItem = locationArr[newIndex];
-                    currentLocation[l] = newCurrentItem.current;
-                    numberOfSteps++;
-                    if (currentLocation[l].endsWith('Z')) endsWithZ++;
-                }
-            }
-        }
+        // while (endsWithZ !== startingLocations.length) {
+        //     for (let d = 0; d < directions.length; d++) {
+        //         endsWithZ = 0;
+        //         for (let l = 0; l < startingLocations.length; l++) {
+        //             console.log('Im trying!')
+        //             const nextDir = directions[d];
+        //             const index = locationArr.findIndex(item => item.current === currentLocation[l]);
+        //             const currentItem = locationArr[index];
+        //             const nextLocation = nextDir === 'L' ? currentItem.left : currentItem.right;
+        //             const newIndex = locationArr.findIndex(item => item.current === nextLocation);
+        //             const newCurrentItem = locationArr[newIndex];
+        //             currentLocation[l] = newCurrentItem.current;
+        //             numberOfSteps++;
+        //             if (currentLocation[l].endsWith('Z')) endsWithZ++;
+        //         }
+        //     }
+        // }
 
         return numberOfSteps / startingLocations.length;
     }
