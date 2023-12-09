@@ -1,8 +1,12 @@
 import { Title } from "@aoc/components"
-import { dayEightData, testData, testData2, testData3 } from "puzzle-inputs/2023/8";
+import { dayEightData, testData3 } from "puzzle-inputs/2023/8";
 import styled from "styled-components";
 
 const TwentyTwentyThree_DayEight = () => {
+    let numberOfStepsForPartTwo = 0;
+    let endsWithZ = 0;
+    let currentLocationForPartTwo: string[] = [];
+    
     interface Locations {
         current: string;
         left: string;
@@ -23,7 +27,7 @@ const TwentyTwentyThree_DayEight = () => {
             if (matches) locationArr.push({current: matches[1], left: matches[2], right: matches[3]})
         })
 
-        while (currentLocation !== 'ZZZ') {
+        while (currentLocation !== 'ZZZ') {currentLocation
             for (let i = 0; i < directions.length; i++) {
                 const nextDir = directions[i];
                 const index = locationArr.findIndex(item => item.current === currentLocation);
@@ -38,12 +42,9 @@ const TwentyTwentyThree_DayEight = () => {
     }
 
     const partTwo = (data: string) => {
-        let numberOfSteps = 0;
-
         const lines = data.trim().split(/\n/g).filter(item => item !== "");
         const dir = lines.splice(0, 1);
         const directions = dir[0].split('');
-        let currentLocation: string[] = [];
 
         const locationArr: Locations[] = [];
         lines.forEach(line => {
@@ -51,33 +52,40 @@ const TwentyTwentyThree_DayEight = () => {
             if (matches) locationArr.push({current: matches[1], left: matches[2], right: matches[3]})
         })
 
-        const startingLocations: string[] = [];
         locationArr.forEach(loc => {
-            if (loc.current.endsWith('A')) startingLocations.push(loc.current);
+            if (loc.current.endsWith('A')) currentLocationForPartTwo.push(loc.current);
         })
 
-        currentLocation = startingLocations;
-
-        let endsWithZ = 0;
-        // while (endsWithZ !== startingLocations.length) {
-        //     for (let d = 0; d < directions.length; d++) {
-        //         endsWithZ = 0;
-        //         for (let l = 0; l < startingLocations.length; l++) {
-        //             console.log('Im trying!')
-        //             const nextDir = directions[d];
-        //             const index = locationArr.findIndex(item => item.current === currentLocation[l]);
-        //             const currentItem = locationArr[index];
-        //             const nextLocation = nextDir === 'L' ? currentItem.left : currentItem.right;
-        //             const newIndex = locationArr.findIndex(item => item.current === nextLocation);
-        //             const newCurrentItem = locationArr[newIndex];
-        //             currentLocation[l] = newCurrentItem.current;
-        //             numberOfSteps++;
-        //             if (currentLocation[l].endsWith('Z')) endsWithZ++;
-        //         }
+        let chunkSize = 10;
+        let breakLoop = false;
+        // TODO: Optimize this loop
+        // while (endsWithZ !== currentLocationForPartTwo.length) {
+        //     if (breakLoop) break;
+        //     for (let i = 0; i < directions.length; i += chunkSize) {
+        //         const chunk = directions.slice(i, i + chunkSize);
+        //         processDirections(chunk, currentLocationForPartTwo, locationArr);
         //     }
         // }
 
-        return numberOfSteps / startingLocations.length;
+        return 'incomplete';
+
+        return numberOfStepsForPartTwo;
+    }
+
+    const processDirections = (directions: string[], currentLocationForPartTwo: string[], locationArr: Locations[]) => {
+        directions.forEach(dir => {
+            endsWithZ = 0;
+            for (let l = 0; l < currentLocationForPartTwo.length; l++) {
+                const currentItem = locationArr[locationArr.findIndex(item => item.current === currentLocationForPartTwo[l])];
+                const nextLocation = dir === 'L' ? currentItem.left : currentItem.right;
+                const newCurrentItem = locationArr[locationArr.findIndex(item => item.current === nextLocation)];
+                currentLocationForPartTwo[l] = newCurrentItem.current;
+                if (currentLocationForPartTwo[l].endsWith('Z')) endsWithZ++;
+            }
+            numberOfStepsForPartTwo++;
+        });
+        console.log('endsWithZ: ', endsWithZ);
+        if (endsWithZ > 0) console.log('currentLocationForPartTwo: ', currentLocationForPartTwo);
     }
    
     return (
