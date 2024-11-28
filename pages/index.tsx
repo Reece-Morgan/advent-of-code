@@ -7,7 +7,8 @@ const AdventOfCode = () => {
     <Wrapper>
         <Title>Advent of Code</Title>
         <StyledList>
-          <List><StyledLink href='/2023'>AoC 2023</StyledLink></List>
+            <List><StyledLink href='/2024'>AoC 2024</StyledLink></List>
+            <List><StyledLink href='/2023'>AoC 2023</StyledLink></List>
         </StyledList>
     </Wrapper>
   )
