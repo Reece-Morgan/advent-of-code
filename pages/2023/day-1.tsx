@@ -22,7 +22,6 @@ const TwentyTwentyThree_DayOne = () => {
   useEffect(() => {
     const fetchInputData = async () => {
       const res = await getDayInput("2023 Day 1");
-      console.log("res: ", res);
       setData(res);
     };
     fetchInputData();

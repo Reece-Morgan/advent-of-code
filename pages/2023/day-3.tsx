@@ -1,9 +1,32 @@
 import { Title } from "@aoc/components"
-import { findUniqueSymbols } from "@aoc/shared-utils";
-import { dayThreeData, testData } from "puzzle-inputs/2023/3";
+import { findUniqueSymbols, getDayInput } from "@aoc/shared-utils";
+import { PuzzleInput } from "@aoc/types";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const TwentyTwentyThree_DayThree = () => {
+    const [data, setData] = useState<PuzzleInput>({
+      data: {
+        puzzleInput: {
+          title: "",
+          testData: {
+            markdown: "",
+          },
+          inputData: {
+            markdown: "",
+          },
+        },
+      },
+    });
+  
+    useEffect(() => {
+      const fetchInputData = async () => {
+        const res = await getDayInput("2023 Day 3");
+        setData(res);
+      };
+      fetchInputData();
+    }, []);
+    
     const findSymbolIndices = (data: string, symbolsToFind: string[]) => {
         const indices: { [symbol: string]: number[] } = {};
 
@@ -103,7 +126,7 @@ const TwentyTwentyThree_DayThree = () => {
         <>
             <Title>2023 - Day 3</Title>
             <Subtitle>Part 1</Subtitle>
-            <Answer>{partOne(dayThreeData)}</Answer>
+            <Answer>{partOne(data.data.puzzleInput.inputData.markdown)}</Answer>
             <Subtitle>Part 2</Subtitle>
             <Answer>{partTwo()}</Answer>
         </>

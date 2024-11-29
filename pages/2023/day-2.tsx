@@ -1,8 +1,32 @@
 import { Title } from "@aoc/components"
-import { dayTwoData } from "puzzle-inputs/2023/2";
+import { getDayInput } from "@aoc/shared-utils";
+import { PuzzleInput } from "@aoc/types";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const TwentyTwentyThree_DayTwo = () => {
+    const [data, setData] = useState<PuzzleInput>({
+      data: {
+        puzzleInput: {
+          title: "",
+          testData: {
+            markdown: "",
+          },
+          inputData: {
+            markdown: "",
+          },
+        },
+      },
+    });
+
+    useEffect(() => {
+      const fetchInputData = async () => {
+        const res = await getDayInput("2023 Day 2");
+        setData(res);
+      };
+      fetchInputData();
+    }, []);
+    
     const checkAmountOfCubes = (cubes: string[]): boolean => {
         if (cubes[1] === "red") {
             if (+cubes[0] <= 12) return true
@@ -16,7 +40,7 @@ const TwentyTwentyThree_DayTwo = () => {
     const partOne = () => {
         let combinedIds = 0;
         let iteration = 0;
-        const lines = dayTwoData.trim().split(/\n/g);
+        const lines = data.data.puzzleInput.inputData.markdown.trim().split(/\n/g);
         for (let i = 0; i < lines.length; i++) {
             iteration = 0;
             const gameId = i + 1;
@@ -37,7 +61,7 @@ const TwentyTwentyThree_DayTwo = () => {
 
     const partTwo = () => {
         let totalPower = 0;
-        const lines = dayTwoData.trim().split(/\n/g);
+        const lines = data.data.puzzleInput.inputData.markdown.trim().split(/\n/g);
         for (let i = 0; i < lines.length; i++) {
             const line = lines[i].substring(lines[i].indexOf(':') + 1);
             const arr = line.split(';').map(l => l.split(',')).flat(1);
