@@ -1,3 +1,5 @@
+"use client";
+
 import { Title } from "@aoc/components";
 import { dayEightData } from "./input";
 import styled from "styled-components";

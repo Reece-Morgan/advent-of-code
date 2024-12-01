@@ -1,3 +1,5 @@
+'use client';
+
 import { Title } from "@aoc/components"
 import styled from "styled-components";
 import { dayOneData } from './input';
