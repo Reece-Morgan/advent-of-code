@@ -7,7 +7,7 @@ const TwentyTwentyFour = () => {
         <>
             <Title>2024 Advent of Code</Title>
             <Wrapper>
-                <CalendarDoor link="2024/day-1" isStarted={true} status="n/a">1</CalendarDoor>
+                <CalendarDoor link="2024/day-1" isStarted={true} status="gold">1</CalendarDoor>
                 <CalendarDoor link="2024/day-2" isStarted={false} status="n/a">2</CalendarDoor>
                 <CalendarDoor link="2024/day-3" isStarted={false} status="n/a">3</CalendarDoor>
                 <CalendarDoor link="2024/day-4" isStarted={false} status="n/a">4</CalendarDoor>

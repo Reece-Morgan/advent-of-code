@@ -1,5 +1,5 @@
 import { Title } from "@aoc/components";
-import { dayOneInput, dayOneTestData } from "puzzle-inputs/2024/1";
+import { dayOneInput } from "puzzle-inputs/2024/1";
 import styled from "styled-components";
 
 const TwentyTwentyFour_DayX = () => {
@@ -32,15 +32,41 @@ const TwentyTwentyFour_DayX = () => {
       } else {
         distance = rightIds[i] - leftIds[i];
       }
-      totalDistance += distance
+      totalDistance += distance;
     }
 
     return totalDistance;
   };
 
-  const partTwo = () => {
-    // Function for Part Two
-    return "incomplete";
+  const partTwo = (input: string) => {
+    // Initialize two empty arrays to contain the list of Location IDs
+    // and number object to contain the similarity score
+    let leftIds: number[] = [];
+    let rightIds: number[] = [];
+    let similarityScore: number = 0;
+
+    // Split the input string by new lines
+    const lines = input.split("\n");
+
+    // Loop through each line and split by spaces, then push the values to the corresponding arrays
+    lines.forEach((line) => {
+      const [left, right] = line.split(/\s+/).map(Number); // Split by spaces and convert to numbers
+      leftIds.push(left);
+      rightIds.push(right);
+    });
+
+    // Loop through the left ids and filter the right ids to find how many times
+    // each number from the left ids appears in the right
+    // multiply the left id by the number of times it appears in the rightIds array
+    for (let i = 0; i < leftIds.length; i++) {
+      const numberOfAppearances = rightIds.filter(
+        (num) => num === leftIds[i]
+      ).length;
+      const score = leftIds[i] * numberOfAppearances;
+      similarityScore += score;
+    }
+
+    return similarityScore;
   };
 
   return (
@@ -49,7 +75,7 @@ const TwentyTwentyFour_DayX = () => {
       <Subtitle>Part 1</Subtitle>
       <Answer>{partOne(dayOneInput)}</Answer>
       <Subtitle>Part 2</Subtitle>
-      <Answer>{partTwo()}</Answer>
+      <Answer>{partTwo(dayOneInput)}</Answer>
     </>
   );
 };
