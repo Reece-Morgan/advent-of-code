@@ -2,6 +2,12 @@
 
 import Snowfall from "react-snowfall";
 import "./globals.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Reece Morgan | Advent of Code",
+  description: "Advent of Code Portfolio piece created with Next and Typescript",
+};
 
 export default function RootLayout({
   // Layouts must accept a children prop.
