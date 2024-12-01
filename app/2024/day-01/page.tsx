@@ -4,7 +4,7 @@ import { Title } from "@aoc/components";
 import { dayOneInput } from "./input";
 import styled from "styled-components";
 
-const TwentyTwentyFour_DayX = () => {
+const TwentyTwentyFour_DayOne = () => {
   const partOne = (input: string) => {
     // Initialize two empty arrays to contain the list of Location IDs
     // and number object to contain total distance
@@ -82,7 +82,7 @@ const TwentyTwentyFour_DayX = () => {
   );
 };
 
-export default TwentyTwentyFour_DayX;
+export default TwentyTwentyFour_DayOne;
 
 const Subtitle = styled.h2`
   text-align: center;
