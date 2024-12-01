@@ -1,5 +1,7 @@
+"use client";
+
 import { Title } from "@aoc/components";
-import { dayOneInput } from "puzzle-inputs/2024/1";
+import { dayOneInput } from "./input";
 import styled from "styled-components";
 
 const TwentyTwentyFour_DayX = () => {
