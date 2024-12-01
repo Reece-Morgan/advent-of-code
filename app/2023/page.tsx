@@ -1,7 +1,6 @@
 "use client";
 
-import { Title } from "@aoc/components";
-import { CalendarDoor } from "lib/component-library/calendar-door/calendar-door";
+import { Title, CalendarDoor } from "@aoc/components";
 import styled from "styled-components";
 
 const TwentyTwentyThree = () => {

@@ -1,1 +1,2 @@
-export { Title } from './title/title';
+export { CalendarDoor } from "./calendar-door/calendar-door";
+export { Title } from "./title/title";
