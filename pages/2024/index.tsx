@@ -7,15 +7,15 @@ const TwentyTwentyFour = () => {
         <>
             <Title>2024 Advent of Code</Title>
             <Wrapper>
-                <CalendarDoor link="2024/day-1" isStarted={true} status="gold">1</CalendarDoor>
-                <CalendarDoor link="2024/day-2" isStarted={false} status="n/a">2</CalendarDoor>
-                <CalendarDoor link="2024/day-3" isStarted={false} status="n/a">3</CalendarDoor>
-                <CalendarDoor link="2024/day-4" isStarted={false} status="n/a">4</CalendarDoor>
-                <CalendarDoor link="2024/day-5" isStarted={false} status="n/a">5</CalendarDoor>
-                <CalendarDoor link="2024/day-6" isStarted={false} status="n/a">6</CalendarDoor>
-                <CalendarDoor link="2024/day-7" isStarted={false} status="n/a">7</CalendarDoor>
-                <CalendarDoor link="2024/day-8" isStarted={false} status="n/a">8</CalendarDoor>
-                <CalendarDoor link="2024/day-9" isStarted={false} status="n/a">9</CalendarDoor>
+                <CalendarDoor link="2024/day-01" isStarted={true} status="gold">1</CalendarDoor>
+                <CalendarDoor link="2024/day-02" isStarted={false} status="n/a">2</CalendarDoor>
+                <CalendarDoor link="2024/day-03" isStarted={false} status="n/a">3</CalendarDoor>
+                <CalendarDoor link="2024/day-04" isStarted={false} status="n/a">4</CalendarDoor>
+                <CalendarDoor link="2024/day-05" isStarted={false} status="n/a">5</CalendarDoor>
+                <CalendarDoor link="2024/day-06" isStarted={false} status="n/a">6</CalendarDoor>
+                <CalendarDoor link="2024/day-07" isStarted={false} status="n/a">7</CalendarDoor>
+                <CalendarDoor link="2024/day-08" isStarted={false} status="n/a">8</CalendarDoor>
+                <CalendarDoor link="2024/day-09" isStarted={false} status="n/a">9</CalendarDoor>
                 <CalendarDoor link="2024/day-10" isStarted={false} status="n/a">10</CalendarDoor>
                 <CalendarDoor link="2024/day-11" isStarted={false} status="n/a">11</CalendarDoor>
                 <CalendarDoor link="2024/day-12" isStarted={false} status="n/a">12</CalendarDoor>

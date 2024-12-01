@@ -1,5 +1,5 @@
 import { Title } from "@aoc/components"
-import { daySixData } from "puzzle-inputs/2023/6";
+import { daySixData } from "./input.ts";
 import styled from "styled-components";
 
 const TwentyTwentyThree_DaySix = () => {
