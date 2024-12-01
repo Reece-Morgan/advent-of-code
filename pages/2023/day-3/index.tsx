@@ -1,6 +1,6 @@
 import { Title } from "@aoc/components"
 import { findUniqueSymbols } from "@aoc/shared-utils";
-import { dayThreeData } from "./input.ts";
+import { dayThreeData } from "./input";
 import styled from "styled-components";
 
 const TwentyTwentyThree_DayThree = () => {

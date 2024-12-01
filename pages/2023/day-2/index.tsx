@@ -1,5 +1,5 @@
 import { Title } from "@aoc/components"
-import { dayTwoData } from "./input.ts";
+import { dayTwoData } from "./input";
 import styled from "styled-components";
 
 const TwentyTwentyThree_DayTwo = () => {
