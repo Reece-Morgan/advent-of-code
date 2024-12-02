@@ -1,3 +1,5 @@
+'use client';
+
 import styled from "styled-components";
 import { ReactNode, useState } from 'react';
 import Link from "next/link";
