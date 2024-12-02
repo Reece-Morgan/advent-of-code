@@ -7,42 +7,15 @@ export const calculateSafeLevels = (input: string) => {
   levels.forEach((level) => {
     // Split the level string into an array of numbers
     const numbers = level.split(" ").map(Number);
-    // Flags to check if the sequence is increasing or decreasing
-    let isIncreasing = true;
-    let isDecreasing = true;
-
-    // Loop through the numbers and compare adjacent numbers
-    for (let i = 1; i < numbers.length; i++) {
-      if (numbers[i] <= numbers[i - 1]) {
-        isIncreasing = false; // If any number is less than or equal to the previous, it's not increasing
-      }
-      if (numbers[i] >= numbers[i - 1]) {
-        isDecreasing = false; // If any number is greater than or equal to the previous, it's not decreasing
-      }
-    }
 
     // Determine the result based on the flags
-    if (isIncreasing || isDecreasing) {
-      if (isDifferenceBetweenOneAndThree(level)) safeLevels++;
+    if (isStrictlyIncreasing(numbers) || isStrictlyDecreasing(numbers)) {
+      if (isDifferenceBetweenOneAndThree(numbers)) safeLevels++;
     }
   });
 
   return safeLevels;
 };
-
-function isDifferenceBetweenOneAndThree(level: string): boolean {
-  // Split the level string into an array of strings, then convert them to numbers
-  const numbers = level.split(" ").map(Number);
-
-  // Loop through the numbers and calculate the difference between adjacent numbers
-  for (let i = 1; i < numbers.length; i++) {
-    const diff = numbers[i] - numbers[i - 1];
-    if (Math.abs(diff) > 3) return false;
-  }
-
-  // Return true if all diffs are between 1 and 3
-  return true;
-}
 
 export const calculateNewSafeLevels = (input: string) => {
   const reports = input.split("\n");
@@ -81,8 +54,8 @@ export const calculateNewSafeLevels = (input: string) => {
 };
 
 function checkIfSafe(numbers: number[]): boolean {
-  // Check if the sequence is already strictly increasing or decreasing
-  if (isStrictlyIncreasing(numbers) || isStrictlyDecreasing(numbers)) return checkTheDifference(numbers);
+  if (isStrictlyIncreasing(numbers) || isStrictlyDecreasing(numbers))
+    return isDifferenceBetweenOneAndThree(numbers);
   return false;
 }
 
@@ -104,7 +77,7 @@ function isStrictlyDecreasing(numbers: number[]): boolean {
   return true;
 }
 
-function checkTheDifference(level: number[]): boolean {
+function isDifferenceBetweenOneAndThree(level: number[]): boolean {
   // Loop through the numbers and calculate the difference between adjacent numbers
   for (let i = 1; i < level.length; i++) {
     const diff = level[i] - level[i - 1];
