@@ -2,8 +2,11 @@
 
 import styled from "styled-components";
 import { Title } from "@aoc/components";
-import { testData, input } from "./input";
-import { calculateMultiplcation } from "./functions";
+import { input } from "./input";
+import {
+  calculateMultiplcation,
+  calculateUpdatedMultiplication,
+} from "./functions";
 
 const TwentyTwentyFour_DayThree = () => {
   return (
@@ -12,7 +15,7 @@ const TwentyTwentyFour_DayThree = () => {
       <Subtitle>Part 1</Subtitle>
       <Answer>{calculateMultiplcation(input)}</Answer>
       <Subtitle>Part 2</Subtitle>
-      <Answer>incomplete</Answer>
+      <Answer>{calculateUpdatedMultiplication(input)}</Answer>
     </>
   );
 };

@@ -15,7 +15,7 @@ const TwentyTwentyFour = () => {
         <CalendarDoor link="2024/day-02" isStarted={true} status="gold">
           2
         </CalendarDoor>
-        <CalendarDoor link="2024/day-03" isStarted={true} status="silver">
+        <CalendarDoor link="2024/day-03" isStarted={true} status="gold">
           3
         </CalendarDoor>
         <CalendarDoor link="2024/day-04" isStarted={false} status="n/a">
