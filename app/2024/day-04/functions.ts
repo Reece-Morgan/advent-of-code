@@ -65,3 +65,64 @@ const convertInputToGrid = (input: string): string[][] => {
   // Map each row to an array of characters (strings)
   return rows.map((row) => row.split(""));
 };
+
+export const countMasXShape = (input: string): number => {
+  let foundMasXCounter = 0;
+
+  const grid = convertInputToGrid(input);
+  const rows = grid.length;
+  const cols = grid[0].length;
+
+  let firstHalfOfX: boolean = false;
+  let secondHalfOfX: boolean = false;
+
+  // Check for the "X" shape formed by "MAS" in two diagonal directions
+  for (let r = 0; r < rows - 2; r++) {
+    // Loop through each row (except the last two rows)
+    for (let c = 0; c < cols; c++) {
+      // Loop through each column
+      // Check if we can form the "X" shape with "MAS"
+      // Top-left to bottom-right diagonal
+      if (r + 2 < rows && c + 2 < cols) {
+        if (
+          grid[r][c] === "M" &&
+          grid[r + 1][c + 1] === "A" &&
+          grid[r + 2][c + 2] === "S"
+        ) {
+          firstHalfOfX = true;
+        } else if (
+          grid[r][c] === "S" &&
+          grid[r + 1][c + 1] === "A" &&
+          grid[r + 2][c + 2] === "M"
+        ) {
+          firstHalfOfX = true;
+        }
+      }
+
+      // Top-right to bottom-left diagonal
+      if (r + 2 < rows && c - 2 >= 0) {
+        if (
+          grid[r][c + 2] === "M" &&
+          grid[r + 1][c + 1] === "A" &&
+          grid[r + 2][c] === "S"
+        ) {
+          secondHalfOfX = true;
+        } else if (
+          grid[r][c + 2] === "S" &&
+          grid[r + 1][c + 1] === "A" &&
+          grid[r + 2][c] === "M"
+        ) {
+          secondHalfOfX = true;
+        }
+      }
+
+      if (firstHalfOfX && secondHalfOfX) {
+        foundMasXCounter++;
+        firstHalfOfX = false;
+        secondHalfOfX = false;
+      }
+    }
+  }
+
+  return foundMasXCounter;
+};

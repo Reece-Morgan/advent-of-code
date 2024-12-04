@@ -3,7 +3,7 @@
 import styled from "styled-components";
 import { Title } from "@aoc/components";
 import { testData, input } from "./input";
-import { findXmas } from './functions';
+import { findXmas, countMasXShape } from "./functions";
 
 const TwentyTwentyFour_DayFour = () => {
   return (
@@ -12,6 +12,7 @@ const TwentyTwentyFour_DayFour = () => {
       <Subtitle>Part 1</Subtitle>
       <Answer>{findXmas(input)}</Answer>
       <Subtitle>Part 2</Subtitle>
+      {/* <Answer>{countMasXShape(input)}</Answer> */}
       <Answer>incomplete</Answer>
     </>
   );
