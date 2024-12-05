@@ -2,8 +2,11 @@
 
 import styled from "styled-components";
 import { Title } from "@aoc/components";
-import { getTotalOfMiddleValues } from "./functions";
 import { testData, input } from "./input";
+import {
+  getTotalOfMiddleValues,
+  getValueOfIncorrectlyOrderedUpdates,
+} from "./functions";
 
 const TwentyTwentyFour_DayFive = () => {
   return (
@@ -12,7 +15,7 @@ const TwentyTwentyFour_DayFive = () => {
       <Subtitle>Part 1</Subtitle>
       <Answer>{getTotalOfMiddleValues(input)}</Answer>
       <Subtitle>Part 2</Subtitle>
-      <Answer>incomplete</Answer>
+      <Answer>{getValueOfIncorrectlyOrderedUpdates(input)}</Answer>
     </>
   );
 };
