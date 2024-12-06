@@ -114,7 +114,7 @@ function checkUp(
 
   if (
     inputMap[currentPosition[0] - 1]?.[currentPosition[1]] === "." ||
-    inputMap[currentPosition[0] - 1]?.[currentPosition[1]] === "x"
+    inputMap[currentPosition[0] - 1]?.[currentPosition[1]] === "X"
   ) {
     // Move up
     newPos[0] -= 1;
@@ -135,7 +135,7 @@ function checkRight(
 
   if (
     inputMap[currentPosition[0]]?.[currentPosition[1] + 1] === "." ||
-    inputMap[currentPosition[0]]?.[currentPosition[1] + 1] === "x"
+    inputMap[currentPosition[0]]?.[currentPosition[1] + 1] === "X"
   ) {
     // Move right
     newPos[1] += 1;
@@ -156,7 +156,7 @@ function checkDown(
 
   if (
     inputMap[currentPosition[0] + 1]?.[currentPosition[1]] === "." ||
-    inputMap[currentPosition[0] + 1]?.[currentPosition[1]] === "x"
+    inputMap[currentPosition[0] + 1]?.[currentPosition[1]] === "X"
   ) {
     // Move down
     newPos[0] += 1;
@@ -177,7 +177,7 @@ function checkLeft(
 
   if (
     inputMap[currentPosition[0]]?.[currentPosition[1] - 1] === "." ||
-    inputMap[currentPosition[0]]?.[currentPosition[1] - 1] === "x"
+    inputMap[currentPosition[0]]?.[currentPosition[1] - 1] === "X"
   ) {
     // Move left
     newPos[1] -= 1;
