@@ -105,10 +105,10 @@ const changeDirection = (currentDirection: string): string => {
   return "Up";
 };
 
-function checkUp(
+const checkUp = (
   inputMap: string[][],
   currentPosition: Position
-): [Position, boolean] {
+): [Position, boolean] => {
   let newPos: Position = [...currentPosition];
   let changeDir = false;
 
@@ -124,12 +124,12 @@ function checkUp(
   }
 
   return [newPos, changeDir];
-}
+};
 
-function checkRight(
+const checkRight = (
   inputMap: string[][],
   currentPosition: Position
-): [Position, boolean] {
+): [Position, boolean] => {
   let newPos: Position = [...currentPosition];
   let changeDir = false;
 
@@ -145,12 +145,12 @@ function checkRight(
   }
 
   return [newPos, changeDir];
-}
+};
 
-function checkDown(
+const checkDown = (
   inputMap: string[][],
   currentPosition: Position
-): [Position, boolean] {
+): [Position, boolean] => {
   let newPos: Position = [...currentPosition];
   let changeDir = false;
 
@@ -166,12 +166,12 @@ function checkDown(
   }
 
   return [newPos, changeDir];
-}
+};
 
-function checkLeft(
+const checkLeft = (
   inputMap: string[][],
   currentPosition: Position
-): [Position, boolean] {
+): [Position, boolean] => {
   let newPos: Position = [...currentPosition];
   let changeDir = false;
 
@@ -187,4 +187,4 @@ function checkLeft(
   }
 
   return [newPos, changeDir];
-}
+};
