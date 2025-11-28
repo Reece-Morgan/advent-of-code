@@ -8,9 +8,12 @@ const TwentyTwentyFive = () => {
   return (
     <>
       <Title>2025 Advent of Code</Title>
-      <Text>This year, advent of code has been changed to 12 days instead of the usual 24</Text>
+      <Text>
+        This year, advent of code has been changed to 12 days instead of the
+        usual 24
+      </Text>
       <Wrapper>
-        <CalendarDoor link="2025/day-01" isStarted={false} status="n/a">
+        <CalendarDoor link="2025/day-01" isStarted={true} status="n/a">
           1
         </CalendarDoor>
         <CalendarDoor link="2025/day-02" isStarted={false} status="n/a">
