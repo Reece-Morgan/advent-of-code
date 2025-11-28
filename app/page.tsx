@@ -10,6 +10,9 @@ const AdventOfCode = () => {
       <Title>Advent of Code</Title>
       <StyledList>
         <List>
+          <StyledLink href="/2025">AoC 2025</StyledLink>
+        </List>
+        <List>
           <StyledLink href="/2024">AoC 2024</StyledLink>
         </List>
         <List>
