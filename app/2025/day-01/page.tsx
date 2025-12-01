@@ -2,8 +2,8 @@
 
 import styled from "styled-components";
 import { Title } from "@aoc/components";
-import { testData, input } from "./inputs";
-import { calculatePassword } from "./functions";
+import { input } from "./inputs";
+import { calculatePassword, timesPointedAtZero } from "./functions";
 
 const TwentyTwentyFive_Day1 = () => {
   return (
@@ -12,7 +12,7 @@ const TwentyTwentyFive_Day1 = () => {
       <Subtitle>Part 1</Subtitle>
       <Answer>{calculatePassword(input)}</Answer>
       <Subtitle>Part 2</Subtitle>
-      <Answer>incomplete</Answer>
+      <Answer>{timesPointedAtZero(input)}</Answer>
     </>
   );
 };

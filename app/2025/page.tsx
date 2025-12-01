@@ -13,7 +13,7 @@ const TwentyTwentyFive = () => {
         usual 24
       </Text>
       <Wrapper>
-        <CalendarDoor link="2025/day-01" isStarted={true} status="silver">
+        <CalendarDoor link="2025/day-01" isStarted={true} status="gold">
           1
         </CalendarDoor>
         <CalendarDoor link="2025/day-02" isStarted={false} status="n/a">
