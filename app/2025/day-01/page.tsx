@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 import { Title } from "@aoc/components";
-import { input } from "./inputs";
+import { input } from "./input";
 import { calculatePassword, timesPointedAtZero } from "./functions";
 
 const TwentyTwentyFive_Day1 = () => {
