@@ -2,7 +2,6 @@
 
 import { Title } from "@aoc/components"
 import styled from "styled-components";
-import { dayOneData } from './input';
 import { getDayInput, replaceWordsWithNumbers } from "@aoc/shared-utils";
 import { useEffect, useState } from "react";
 import { PuzzleInput } from "@aoc/types";
