@@ -2,8 +2,8 @@
 
 import styled from "styled-components";
 import { Title } from "@aoc/components";
-import { testData, input } from "./input";
-import { calculateInvalidIds } from "./functions";
+import { input } from "./input";
+import { calculateInvalidIds, calculateMoreInvalidIds } from "./functions";
 
 const TwentyTwentyFive_Day2 = () => {
   return (
@@ -12,7 +12,7 @@ const TwentyTwentyFive_Day2 = () => {
       <Subtitle>Part 1</Subtitle>
       <Answer>{calculateInvalidIds(input)}</Answer>
       <Subtitle>Part 2</Subtitle>
-      <Answer>incomplete</Answer>
+      <Answer>{calculateMoreInvalidIds(input)}</Answer>
     </>
   );
 };
