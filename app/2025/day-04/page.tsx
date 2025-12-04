@@ -2,8 +2,8 @@
 
 import styled from "styled-components";
 import { Title } from "@aoc/components";
-import { testData, input } from "./input";
-import { findFewestPaperRolls } from "./functions";
+import { input } from "./input";
+import { findFewestPaperRolls, findMostPaperRolls } from "./functions";
 
 const TwentyTwentyFive_Day4 = () => {
   return (
@@ -12,7 +12,7 @@ const TwentyTwentyFive_Day4 = () => {
       <Subtitle>Part 1</Subtitle>
       <Answer>{findFewestPaperRolls(input)}</Answer>
       <Subtitle>Part 2</Subtitle>
-      <Answer>incomplete</Answer>
+      <Answer>{findMostPaperRolls(input)}</Answer>
     </>
   );
 };
