@@ -2,15 +2,15 @@
 
 import styled from "styled-components";
 import { Title } from "@aoc/components";
-// import { testData } from "./input";
-// import {  } from "./functions";
+import { testData, input } from "./input";
+import { findFewestPaperRolls } from "./functions";
 
 const TwentyTwentyFive_Day4 = () => {
   return (
     <>
       <Title>2025 - Day 4</Title>
       <Subtitle>Part 1</Subtitle>
-      <Answer>incomplete</Answer>
+      <Answer>{findFewestPaperRolls(input)}</Answer>
       <Subtitle>Part 2</Subtitle>
       <Answer>incomplete</Answer>
     </>
