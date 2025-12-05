@@ -3,7 +3,7 @@
 import styled from "styled-components";
 import { Title } from "@aoc/components";
 import { testData, input } from "./input";
-import { findFreshIngredients } from "./functions";
+import { findFreshIngredients, countAllFreshIngredients } from "./functions";
 
 const TwentyTwentyFive_Day5 = () => {
   return (
@@ -12,7 +12,7 @@ const TwentyTwentyFive_Day5 = () => {
       <Subtitle>Part 1</Subtitle>
       <Answer>{findFreshIngredients(input)}</Answer>
       <Subtitle>Part 2</Subtitle>
-      <Answer>incomplete</Answer>
+      <Answer>{countAllFreshIngredients(input)}</Answer>
     </>
   );
 };
