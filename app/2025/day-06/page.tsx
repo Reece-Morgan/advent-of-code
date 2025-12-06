@@ -3,7 +3,10 @@
 import styled from "styled-components";
 import { Title } from "@aoc/components";
 import { testData, input } from "./input";
-import { calculateMathProblem } from "./functions";
+import {
+  calculateMathProblem,
+  calculateCephalopodMathProblem,
+} from "./functions";
 
 const TwentyTwentyFive_Day6 = () => {
   return (
