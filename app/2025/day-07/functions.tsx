@@ -72,3 +72,102 @@ export const countTachyonBeams = (input: string): number => {
 
   return noOfSplits;
 };
+
+/**
+ * Count the number of timelines produced by a single quantum tachyon particle
+ * traversing a grid according to the "splitter" rules.
+ *
+ * Returns a number with the total number of finished timelines.
+ * Throws an Error if the number of timelines is infinite (a reachable cycle).
+ *
+ * Input format: multiline string where each line is a row.
+ * 'S' marks the start. '.' is empty space. '^' is a splitter.
+ */
+export function countQuantumTimelines(input: string): number {
+  // Parse grid
+  const grid = input.split("\n");
+  const rows = grid.length;
+  if (rows === 0) return 0;
+  const cols = grid[0].length;
+
+  // Find start 'S'
+  let sr = -1, sc = -1;
+  for (let r = 0; r < rows; r++) {
+    const c = grid[r].indexOf("S");
+    if (c !== -1) {
+      sr = r;
+      sc = c;
+      break;
+    }
+  }
+  if (sr === -1) throw new Error("Start 'S' not found in input.");
+
+  // Helpers to map (r,c) <-> id and to check bounds
+  const id = (r: number, c: number) => r * cols + c;
+  const inBounds = (r: number, c: number) => r >= 0 && r < rows && c >= 0 && c < cols;
+
+  // Build neighbor function for directed graph of states.
+  // Node = (r,c) meaning a beam currently at that cell (before attempting to move down).
+  // Edges: from (r,c) -> next states depending on what's below (r+1,c):
+  //   - if (r+1,c) out of bounds => terminal (no outgoing edges)
+  //   - if grid[r+1][c] == '.' => edge to (r+1,c)
+  //   - if grid[r+1][c] == '^' => edges to (r, c-1) and (r, c+1) if in bounds
+  function neighbors(nodeId: number): number[] {
+    const r = Math.floor(nodeId / cols);
+    const c = nodeId % cols;
+    const nr = r + 1;
+    // falling off bottom -> no neighbors (terminal)
+    if (nr >= rows) return [];
+    const ch = grid[nr][c];
+    if (ch === ".") {
+      return [id(nr, c)];
+    } else if (ch === "^") {
+      const res: number[] = [];
+      if (inBounds(r, c - 1)) res.push(id(r, c - 1));
+      if (inBounds(r, c + 1)) res.push(id(r, c + 1));
+      return res;
+    } else {
+      // Any unexpected character treated like '.' (or you can throw)
+      return [id(nr, c)];
+    }
+  }
+
+  // Compute number of paths from start node to ANY terminal using Depth-First Search + memo.
+  // memo[nodeId] = count of timelines that start at nodeId and eventually finish.
+  const memo = new Map<number, number>();
+
+  // DFS that returns number of terminating timelines from node
+  function dfs(node: number): number {
+    // If this node leads immediately off the bottom, that's one timeline finishing.
+    const r = Math.floor(node / cols);
+    const c = node % cols;
+    if (r + 1 >= rows) {
+      return 1;
+    }
+
+    // Memo check
+    if (memo.has(node)) return memo.get(node)!;
+
+
+    const neigh = neighbors(node);
+    // If no neighbors (i.e., falling off grid) handled above, but keep safe:
+    if (neigh.length === 0) {
+      memo.set(node, 1);
+      return 1;
+    }
+
+    // Sum timelines across each outgoing edge. Each outgoing edge corresponds to a
+    // mutually exclusive branch for each timeline currently at this node, so counts add.
+    let total = 0;
+    for (const nxt of neigh) {
+      const cnt = dfs(nxt);
+      total += cnt;
+    }
+
+    memo.set(node, total);
+    return total;
+  }
+
+  const startId = id(sr, sc);
+  return dfs(startId);
+}

@@ -3,7 +3,7 @@
 import styled from "styled-components";
 import { Title } from "@aoc/components";
 import { testData, input } from "./input";
-import { countTachyonBeams } from "./functions";
+import { countTachyonBeams, countQuantumTimelines } from "./functions";
 
 const TwentyTwentyFive_Day7 = () => {
   return (
@@ -12,7 +12,7 @@ const TwentyTwentyFive_Day7 = () => {
       <Subtitle>Part 1</Subtitle>
       <Answer>{countTachyonBeams(input)}</Answer>
       <Subtitle>Part 2</Subtitle>
-      <Answer>incomplete</Answer>
+      <Answer>{countQuantumTimelines(input)}</Answer>
     </>
   );
 };
